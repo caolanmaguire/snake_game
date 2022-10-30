@@ -11,9 +11,12 @@ import numpy as np
 WIDTH = 600
 HEIGHT = 400
 
+DEADLINE_WIDTH = 555
+DEADLINE_HEIGHT = 355
+
 FOOD_SIZE = 0
 
-FOOD_SIZES = [10,50,60,80]
+FOOD_SIZES = [20]#,50,60,80]
 
 def randomize_food_size():
     global FOOD_SIZE
@@ -23,7 +26,7 @@ def randomize_food_size():
 
 randomize_food_size()
 
-FOOD_COLOURS = ['red','yellow','orange','purple']
+FOOD_COLOURS = ['#010008']#,'yellow','orange','purple']
 final_food_colour = np.random.choice(FOOD_COLOURS)
 
 def randomize_food_colours():
@@ -99,8 +102,8 @@ def game_loop():
     new_head[1] += offsets[snake_direction][1]
 
     # Check collisions
-    if new_head in snake or new_head[0] < - WIDTH / 2 or new_head[0] > WIDTH / 2 \
-            or new_head[1] < - HEIGHT / 2 or new_head[1] > HEIGHT / 2:
+    if new_head in snake or new_head[0] < - DEADLINE_WIDTH / 2 or new_head[0] > DEADLINE_WIDTH / 2 \
+            or new_head[1] < - DEADLINE_HEIGHT / 2 or new_head[1] > DEADLINE_HEIGHT / 2:
 
         reset()
     else:
@@ -171,7 +174,7 @@ def reset():
 screen = turtle.Screen()
 screen.setup(WIDTH, HEIGHT)  # Set the dimensions of the window
 screen.title("Snake")
-screen.bgcolor("yellow")
+screen.bgcolor("#7a9a68")
 
 # Background page addition
 screen.bgpic("background.gif")
@@ -180,8 +183,8 @@ screen.tracer(0)  # Turn off automatic animation
 
 # Stamper Turtle
 # This Turtle is defined at the global level, so is available to move_snake()
-stamper = turtle.Turtle(shape="circle")
-stamper.color("blue")
+stamper = turtle.Turtle(shape="square")
+stamper.color("#010008")
 stamper.penup()
 
 # Event handlers
@@ -190,7 +193,7 @@ bind_direction_keys()
 
 # Food
 food = turtle.Turtle()
-food.shape("circle")
+food.shape("square")
 
 food.color(final_food_colour)
 food.shapesize(FOOD_SIZE / 20)  # Default size of turtle "square" shape is 20.
