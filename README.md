@@ -14,10 +14,12 @@ Project is created with:
 	* numpy
 	
 ## Setup
-To run this project, install it locally using npm:
+To run this project, install it locally :
+```
+gh repo clone calsickofthis/snake_game
+```
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+$ cd snake_game
+$ python snake.py
 ```
