@@ -21,5 +21,6 @@ gh repo clone calsickofthis/snake_game
 
 ```
 $ cd snake_game
-$ python snake.py
+$ pip install -r requirements.txt
+$ python snake_game.py
 ```
