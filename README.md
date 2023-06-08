@@ -9,7 +9,9 @@ This was a weekend project where I recreated the popular nokia snake game in pyt
 ## Technologies
 Project is created with:
 * Python 3.7
-* Pygame
+	* turtle
+	* winsound
+	* numpy
 	
 ## Setup
 To run this project, install it locally using npm:
